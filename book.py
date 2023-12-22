@@ -8,12 +8,12 @@ import ccloud_lib
 
 
 class Book:
-    def __init__(self, price, title):
-        self.price = price
-        self.title = title
+  def __init__(self, price, title):
+    self.price = price
+    self.title = title
 
-    def __str__(self):
-        return str(self.__class__) + ' ' + f'price: {self.price} title: {self.title}'
+  def __str__(self):
+    return str(self.__class__) + ' ' + f'price: {self.price} title: {self.title}'
 
 
 if __name__ == "__main__":
