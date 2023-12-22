@@ -15,8 +15,6 @@ def zip_with_idx(input_list, is_zero_based = True):
     return list(zip(list(range(len(input_list))), input_list))
   else:
     return list(zip(list(range(len(input_list) + 1)), [0] + input_list.copy()))[1:]
-#map(add_tuple, list(zip(list(r), fruits)))
-
 
 if __name__ == "__main__":
   show()
