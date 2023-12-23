@@ -1,4 +1,6 @@
 import asyncio
+import transformers
+
 def show():
   print("Hello")
 
@@ -16,6 +18,14 @@ def zip_with_idx(input_list, is_zero_based = True):
   else:
     return list(zip(list(range(len(input_list) + 1)), [0] + input_list.copy()))[1:]
 
+def guess(sentence):
+  bert = "bert-base-uncased"
+  bart = "facebook/bart-base"
+  p = transformers.pipeline("fill-mask", model=bert)
+  # print(sentence.replace('[MASK]','<mask>'))
+  # return p(sentence.replace('[MASK]','<mask>'))
+  return p(sentence)
+
 if __name__ == "__main__":
   show()
   r = is_blue("as")
@@ -29,3 +39,11 @@ if __name__ == "__main__":
   fruits_with_idx_1 = zip_with_idx(fruits, False)
   for i in fruits_with_idx_1:
     print(i)
+  for result in guess("The man is a [MASK]."):
+    print(result)
+  for result in guess("The woman is a [MASK]."):
+    print(result)
+  for result in guess("The [MASK] treats the patient."):
+      print(result)
+  for result in guess("[MASK] save the queen."):
+    print(result)
