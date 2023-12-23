@@ -19,9 +19,10 @@ def zip_with_idx(input_list, is_zero_based = True):
     return list(zip(list(range(len(input_list) + 1)), [0] + input_list.copy()))[1:]
 
 def guess(sentence):
+  albert = "albert-base-v2"
   bert = "bert-base-uncased"
   bart = "facebook/bart-base"
-  p = transformers.pipeline("fill-mask", model=bert)
+  p = transformers.pipeline("fill-mask", model=albert)
   # print(sentence.replace('[MASK]','<mask>'))
   # return p(sentence.replace('[MASK]','<mask>'))
   return p(sentence)
