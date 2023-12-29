@@ -1,8 +1,12 @@
 import markdown
 import requests
+import types
 
 def hello_world(txt):
-    r = requests.get("https://httpbin.org/uuid")
+    try:
+        r = requests.get("https://localhost/jjj")
+    except Exception as e:
+        r = types.SimpleNamespace(**{'text': "This is error"})
     return markdown.markdown(f'{txt} - {r.text}')
 
 if __name__ == "__main__":
