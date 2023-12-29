@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pyka"
+version = "0.1.0"
+description = ""
+authors = ["jackhclee <38123458+jackhclee@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Markdown = "^3.5.1"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[tool.poetry.scripts]
+my-script = "pyka:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
