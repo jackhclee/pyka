@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Rec {
+    optional string name = 1;
+    optional int32 price = 2;
+}
